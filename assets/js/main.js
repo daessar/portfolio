@@ -55,3 +55,48 @@ sr.reveal(".work__img", { interval: 200 });
 
 /*SCROLL CONTACT*/
 sr.reveal(".contact__input", { interval: 200 });
+
+// TYPED EFFECT
+const typed = new Typed(".typed", {
+  strings: ["Student", "Software Developer"],
+  //stringsElement: "#cadenas-texto", // ID del elemento que contiene cadenas de texto a mostrar.
+  typeSpeed: 85, // Velocidad en mlisegundos para poner una letra,
+  startDelay: 1200, // Tiempo de retraso en iniciar la animacion. Aplica tambien cuando termina y vuelve a iniciar,
+  backSpeed: 40, // Velocidad en milisegundos para borrrar una letra,
+  //smartBackspace: true, // Eliminar solamente las palabras que sean nuevas en una cadena de texto.
+  shuffle: false, // Alterar el orden en el que escribe las palabras.
+  backDelay: 2000, // Tiempo de espera despues de que termina de escribir una palabra.
+  loop: true, // Repetir el array de strings
+  loopCount: 2, // Cantidad de veces a repetir el array.  false = infinite
+  showCursor: true, // Mostrar cursor palpitanto
+  cursorChar: "|", // Caracter para el cursor
+  contentType: "html", // 'html' o 'null' para texto sin formato
+});
+
+// FORM MESSAGE
+var form = document.getElementById("form-contact");
+
+async function handleSubmit(event) {
+  event.preventDefault();
+  var status = document.getElementById("text__message");
+  var message = document.getAnimations("container__message");
+  var data = new FormData(event.target);
+  fetch(event.target.action, {
+    method: form.method,
+    body: data,
+    headers: {
+      Accept: "application/json",
+    },
+  })
+    .then((response) => {
+      message.style.display = "block";
+      status.innerHTML = "Thanks for your submission!";
+      form.reset();
+    })
+    .catch((error) => {
+      status.style.display = "block";
+      status.style.border = "3px solid #red";
+      status.innerHTML = "Oops! There was a problem submitting your form";
+    });
+}
+form.addEventListener("submit", handleSubmit);
