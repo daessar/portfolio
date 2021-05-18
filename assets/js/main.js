@@ -58,7 +58,7 @@ sr.reveal(".contact__input", { interval: 200 });
 
 // TYPED EFFECT
 const typed = new Typed(".typed", {
-  strings: ["Student", "Software Developer"],
+  strings: ["Student", "Web Developer"],
   //stringsElement: "#cadenas-texto", // ID del elemento que contiene cadenas de texto a mostrar.
   typeSpeed: 85, // Velocidad en mlisegundos para poner una letra,
   startDelay: 1200, // Tiempo de retraso en iniciar la animacion. Aplica tambien cuando termina y vuelve a iniciar,
