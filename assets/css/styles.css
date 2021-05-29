@@ -338,8 +338,9 @@ img {
 .skills__php {
   width: 85%;
 }
-.skills__img {
-  border-radius: 0.5rem;
+.skills__canva {
+  display: flex;
+  justify-content: center;
 }
 
 /* ===== WORK =====*/
@@ -498,6 +499,12 @@ img {
   }
   .contact__container {
     justify-items: center;
+  }
+  .skills__canva {
+    display: flex;
+    align-self: center;
+    width: 400px;
+    height: 400px;
   }
 }
 

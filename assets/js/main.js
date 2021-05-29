@@ -1,3 +1,25 @@
+// TAG CANVAS
+window.onload = function () {
+  try {
+    TagCanvas.Start("myCanvas", "tags", {
+      textColour: "white",
+      textHeight: 30,
+      textFont: "Poppins, sans-serif",
+      zoom: 1,
+      noSelect: true,
+      pinchZoom: true,
+      freezeDecel: true,
+      fadeIn: 3000,
+      initial: [0.2, -0.1],
+      reverse: true,
+      depth: 0.8,
+      maxSpeed: 0.05,
+    });
+  } catch (e) {
+    // something went wrong, hide the canvas container
+    document.getElementById("myCanvasContainer").style.display = "none";
+  }
+};
 /*===== MENU SHOW =====*/
 const showMenu = (toggleId, navId) => {
   const toggle = document.getElementById(toggleId),
@@ -48,7 +70,7 @@ sr.reveal(".about__text", { delay: 400 });
 sr.reveal(".skills__subtitle", {});
 sr.reveal(".skills__text", {});
 sr.reveal(".skills__data", { interval: 200 });
-sr.reveal(".skills__img", { delay: 600 });
+sr.reveal(".skills__canva", { delay: 600 });
 
 /*SCROLL WORK*/
 sr.reveal(".work__img", { interval: 200 });
