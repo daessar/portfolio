@@ -349,20 +349,82 @@ img {
 }
 
 /* ===== WORK =====*/
-.work__container {
-  row-gap: 2rem;
+/* .work__container {
+  width: 1000px;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+} */
+.container {
+  position: relative;
+  display: flex;
+  justify-content: space-around;
 }
-.work__img {
-  box-shadow: 0 4px 25px rgba(93, 178, 228, 0.15);
-  border-radius: 0.5rem;
-  overflow: hidden;
+.container .card {
+  position: relative;
 }
-.work__img img {
-  transition: 1s;
-  cursor: pointer;
+.container .card .face {
+  width: 320px;
+  height: 200px;
+  transition: 0.5s;
+  box-shadow: 0 4px 25px rgb(93 178 228 / 15%);
 }
-.work__img img:hover {
-  transform: scale(1.1);
+.container .card .face.face1 {
+  position: relative;
+  background: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  /* transform: translateY(100px); */
+}
+.container .card .face.face1 .content {
+  /* opacity: 0.2; */
+  transition: 0.5s;
+}
+.container .card .face.face1 .content img {
+  width: 320px;
+  height: 200px;
+}
+.container .card:hover .face.face1 .content {
+  opacity: 1;
+}
+.container .card:hover .face.face1 .content h3 {
+  margin: 10px 0 0;
+  padding: 0;
+  color: #fff;
+}
+.container .card .face.face2 {
+  position: relative;
+  background: #0e2431;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+  box-shadow: 0 4px 25px rgb(93 178 228 / 15%);
+  transform: translateY(-200px);
+}
+.container .card:hover .face.face2 {
+  transform: translateY(0);
+}
+.container .card .face.face2 .content p {
+  margin: 0;
+  padding: 0;
+  color: #fff;
+}
+.container .card .face.face2 .content a {
+  margin: 15px 0 0;
+  display: inline-block;
+  text-decoration: none;
+  font-weight: 900;
+  color: #fff;
+  padding: 5px;
+  border: 1px solid #fff;
+}
+.container .card .face.face2 .content a:hover {
+  background: #333;
+  color: #fff;
 }
 
 /* ===== CONTACT =====*/
@@ -495,9 +557,9 @@ img {
     width: 300px;
   }
   .work__container {
-    grid-template-columns: repeat(3, 1fr);
+    /* grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, 1fr);
-    column-gap: 2rem;
+    column-gap: 2rem; */
   }
   .contact__form {
     width: 360px;
